@@ -1,0 +1,90 @@
+#include <iostream> 
+#include <conio.h> 
+#include <cstdlib> 
+#include <ctime> 
+#include <string> 
+#include "snake_ladder.cpp" 
+#include "tic_tac_toe.cpp" 
+#include "casino.cpp" 
+#include "rock_paper_scissor.cpp" 
+using namespace std; 
+int main() 
+{ 
+ try 
+ { 
+ int s; 
+ char c; 
+B: 
+ ; 
+ cout<<"\n\n\n\n\n\n\n\t\t\t\t\t!!* WELCOME TO MINI GAMES 
+WORLD * !!"; 
+ cout<<"\n\n\n\t\t\t\t\t In This GAME WORLD You can Enjoy :"; 
+ cout<<"\n\t\t\t\t\t\t 1.Snake and Ladder"; 
+ cout<<"\n\t\t\t\t\t\t 2.Tic Tac Toe"; 
+ cout<<"\n\t\t\t\t\t\t 3.Casino"; 
+ cout<<"\n\t\t\t\t\t\t 4.Rock Paper Scissors"; 
+ cout<<"\n\n\n\t\t\t\t\t Press any key to continue..."; 
+ getch(); 
+A: 
+ ; 
+ system("cls"); 
+ cout<<"\n\nSelect a Game from the Menu:"; 
+ cout<<"\n 1.Snake and Ladder"; 
+ cout<<"\n 2.Tic Tac Toe"; 
+ cout<<"\n 3.Casino"; 
+ cout<<"\n 4.Rock Paper Scissors"; 
+ cout<<"\n\nEnter Your Choice:"; 
+ cin>>s; 
+ system("cls"); 
+ if(s<1 || s>4) 
+ { 
+ throw "Invalid choice. Input number between 1 to 4"; 
+ } 
+ switch(s) 
+ { 
+ case 1: 
+ { 
+ menu1(); 
+ break; 
+ } 
+ case 2: 
+ { 
+ menu2(); 
+ break; 
+ } 
+ case 3: 
+ { 
+ menu3(); 
+ break; 
+ } 
+ case 4: 
+ { 
+ menu4(); 
+ break; 
+ } 
+ default: 
+ { 
+ cout<<"Invalid choice. Input number between 1 to 4"<<endl; 
+ system("pause"); 
+ goto A; 
+ } 
+ } 
+ cout<<"Do you want to play other game: \n "; 
+ cout<<"Press y for yes and n for no \n"; 
+ cin>>c; 
+ system("cls"); 
+ if(c=='n') 
+ { 
+ throw " THANKS FOR PLAYING MINI GAMES "; 
+ } 
+ else 
+ { 
+ goto B; 
+ } 
+ } 
+ catch(const char* msg) 
+ { 
+ cout<<msg<<endl; 
+ } 
+ return 0; 
+} 
